@@ -16,6 +16,16 @@
 
 #pragma once
 
+#define TAPPING_TERM 210
+#define TAPPING_TERM_PER_KEY
+//#define ONESHOT_TIMEOUT 250
+
+#define DYNAMIC_KEYMAP_LAYER_COUNT 6
+
+#define TRI_LAYER_LOWER_LAYER  4
+#define TRI_LAYER_UPPER_LAYER  5
+#define TRI_LAYER_ADJUST_LAYER 3
+
 #ifdef LED_MATRIX_ENABLE
 /* LED matrix driver configuration */
 #    define DRIVER_COUNT 1

@@ -71,7 +71,7 @@
 #    define KEEP_USB_CONNECTION_IN_WIRELESS_MODE
 
 /* Enable bluetooth NKRO */
-#    define WIRELESS_NKRO_ENABLE
+//#    define WIRELESS_NKRO_ENABLE
 
 /* Raw hid command for factory test and bluetooth DFU */
 #    define RAW_HID_CMD 0xAA ... 0xAB

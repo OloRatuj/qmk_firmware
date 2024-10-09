@@ -21,7 +21,14 @@
 #define LT_LWSP	LT(_LOWER,KC_SPC)
 #define LT_LBSP LT(_LOWER,KC_BSPC)
 #define LT_HBSP LT(_HIGHER,KC_BSPC)
-#define TD_HOEN TD(TD_HEND)
+#define TD_HOEN TD(TD_HOME_END)
+#define TD_10PA TD(TD_F10_PAUSE)
+#define TD_1020 TD(TD_F10_F20)
+#define TD_1121 TD(TD_F11_F21)
+#define TD_1222 TD(TD_F12_F22)
+#define TD_1316 TD(TD_F13_F16)
+#define TD_1417 TD(TD_F14_F17)
+#define TD_1518 TD(TD_F15_F18)
 
 //base layer switchers
 #define DF_BAS1 DF(_BASE1)
@@ -55,9 +62,19 @@
 #define HO_LOWV LT(_LOWER,KC_V)
 #define HO_LOWN LT(_LOWER,KC_N)
 
-// aliases for momentary later switch
+// aliases for momentary layer switch
 #define	MO_LO	MO(_LOWER)
 #define MO_HI	MO(_HIGHER)
+#define OSL_HI	OSL(_HIGHER)
+
+
+// mouse aliases
+#define MS_UP   KC_MS_UP	
+#define MS_DOWN	KC_MS_DOWN	
+#define MS_LEFT	KC_MS_LEFT	
+#define MS_RGHT	KC_MS_RIGHT	
+#define MS_BTN1	KC_MS_BTN1	
+#define MS_BTN2	KC_MS_BTN2	
 
 
 
@@ -70,18 +87,29 @@ enum layers{
 	_LOWER,
 	_HIGHER,
 	_BASE3, // home row mods experimnent
-	_FN3,
+	_FN3
 };
 
 // Tap Dance declarations
 enum {
-    TD_HEND,
+    TD_HOME_END,
+	TD_F10_F20,
+	TD_F11_F21,
+	TD_F12_F22,
+	TD_F13_F16,
+	TD_F14_F17,
+	TD_F15_F18,
 };
 
 // Tap Dance definitions
 tap_dance_action_t tap_dance_actions[] = {
-    // Tap once for Escape, twice for Caps Lock
-    [TD_HEND] = ACTION_TAP_DANCE_DOUBLE(KC_HOME, KC_END),
+    [TD_HOME_END]  = ACTION_TAP_DANCE_DOUBLE(KC_HOME, KC_END),
+    [TD_F10_F20]   = ACTION_TAP_DANCE_DOUBLE(KC_F10, KC_F20),
+    [TD_F11_F21]   = ACTION_TAP_DANCE_DOUBLE(KC_F11, KC_F21),
+    [TD_F12_F22]   = ACTION_TAP_DANCE_DOUBLE(KC_F12, KC_F22),
+    [TD_F13_F16]   = ACTION_TAP_DANCE_DOUBLE(KC_F13, KC_F16),
+    [TD_F14_F17]   = ACTION_TAP_DANCE_DOUBLE(KC_F14, KC_F17),
+    [TD_F15_F18]   = ACTION_TAP_DANCE_DOUBLE(KC_F15, KC_F18),
 };
 
 // custome key codes to programe more complex keypresses
@@ -116,20 +144,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,  _______,  _______,  _______,  _______,            _______,                      _______,            _______,  _______,            _______,  _______,  _______),
 
     [_BASE2] = LAYOUT_ansi_90(
-        KC_MUTE,  KC_ESC,   KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,              KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,   KC_INS,   KC_DEL,
-        KC_PAUS,  KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,               KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,  KC_EQL,   KC_BSPC,  TD_HOEN,
-        KC_CALC,  KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,               KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,  KC_RBRC,  KC_BSLS,  KC_PGUP,
-        DM_PLY1,  KC_CAPS,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,               KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,            KC_ENT,   KC_PGDN,
-        DM_PLY2,  SC_LSPO,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     MO_LO,    KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  SC_RSPC,            KC_UP,
-        MC_5,     KC_LCTL,  KC_LWIN,  KC_LALT,  KC_SPC,             MO_LO,                        LT_HBSP,            MO(_FN2), KC_RCTL,            KC_LEFT,  KC_DOWN,  KC_RGHT),
+        KC_MUTE,  KC_ESC,   KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,              KC_F6,    KC_F7,    KC_F8,    KC_F9,    TD_1020,  TD_1121,  TD_1222,   KC_INS,   KC_DEL,
+        TD_1316,  KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,               KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,  KC_EQL,   KC_BSPC,  TD_HOEN,
+        TD_1417,  KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,               KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,  KC_RBRC,  KC_BSLS,  KC_PGUP,
+        TD_1518,  KC_CAPS,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,               KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,            KC_ENT,   KC_PGDN,
+        DM_PLY1,  SC_LSPO,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_BSPC,  KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  SC_RSPC,            KC_UP,
+        DM_PLY2,  KC_LCTL,  KC_LWIN,  KC_LALT,  KC_SPC,             MO_LO,                        OSL_HI,             MO(_FN2), KC_RCTL,            KC_LEFT,  KC_DOWN,  KC_RGHT),
 
     [_FN2] = LAYOUT_ansi_90(
-        BL_TOGG,  _______,  BL_DOWN,  BL_UP,    KC_TASK,  KC_FILE,  RGB_VAD,            RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,  KC_VOLU,  _______,  _______,
+        BL_TOGG,  _______,  BL_DOWN,  BL_UP,    KC_TASK,  KC_FILE,  RGB_VAD,            RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_PAUS,  KC_VOLD,  KC_VOLU,  _______,  _______,
         _______,  _______,  BT_HST1,  BT_HST2,  BT_HST3,  P2P4G,    _______,            _______,  _______,  DF_BAS1,  DF_BAS2,  DF_BAS3,  DT_DOWN,  DT_UP,    DT_PRNT,  KC_END,
         _______,  BL_TOGG,  BL_STEP,  BL_UP,    _______,  _______,  _______,            _______,  _______,  KC_UP,    _______,  _______,  _______,  _______,  _______,  _______,
-        DM_REC1,  _______,  _______,  BL_DOWN,  DB_TOGG,  _______,  _______,            _______,  KC_LEFT,  KC_DOWN,  KC_RGHT,  _______,  _______,            _______,  _______,
-        DM_REC2,  _______,  _______,  _______,  _______,  _______,  BAT_LVL,  _______,  NK_TOGG,  _______,  _______,  _______,  _______,  _______,            _______,
-        _______,  _______,  _______,  _______,  _______,            _______,                      _______,            _______,  _______,            _______,  _______,  _______),
+        _______,  _______,  _______,  BL_DOWN,  DB_TOGG,  _______,  _______,            _______,  KC_LEFT,  KC_DOWN,  KC_RGHT,  MS_UP,    _______,            MS_BTN1,  MS_BTN2,
+        DM_REC1,  _______,  _______,  _______,  _______,  _______,  BAT_LVL,  _______,  NK_TOGG,  _______,  _______,  MS_LEFT,  MS_DOWN,  MS_RGHT,            MS_UP,
+        DM_REC2,  _______,  _______,  _______,  MS_BTN1,            MS_BTN2,                      _______,            _______,  _______,            MS_LEFT,  MS_DOWN,  MS_RGHT),
 
     [_LOWER] = LAYOUT_ansi_90(
         _______,  _______,  _______,  _______,  _______,  _______,  _______,            _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,

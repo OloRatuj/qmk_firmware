@@ -76,7 +76,10 @@
 #define MS_BTN1	KC_MS_BTN1	
 #define MS_BTN2	KC_MS_BTN2	
 
-
+// additional keystrokes
+#define MY_COPY LCTL(KC_C)
+#define MY_CUT LCTL(KC_X)
+#define MY_PASTE LCTL(KC_V)
 
 
 enum layers{
@@ -148,8 +151,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TD_1316,  KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,               KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,  KC_EQL,   KC_BSPC,  TD_HOEN,
         TD_1417,  KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,               KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,  KC_RBRC,  KC_BSLS,  KC_PGUP,
         TD_1518,  KC_CAPS,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,               KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,            KC_ENT,   KC_PGDN,
-        DM_PLY1,  SC_LSPO,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_BSPC,  KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  SC_RSPC,            KC_UP,
-        DM_PLY2,  KC_LCTL,  KC_LWIN,  KC_LALT,  KC_SPC,             MO_LO,                        OSL_HI,             MO(_FN2), KC_RCTL,            KC_LEFT,  KC_DOWN,  KC_RGHT),
+        MY_PASTE, SC_LSPO,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_BSPC,  KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  SC_RSPC,            KC_UP,
+        MY_COPY,  KC_LCTL,  KC_LWIN,  KC_LALT,  KC_SPC,             MO_LO,                        OSL_HI,             MO(_FN2), KC_RCTL,            KC_LEFT,  KC_DOWN,  KC_RGHT),
 
     [_FN2] = LAYOUT_ansi_90(
         BL_TOGG,  _______,  BL_DOWN,  BL_UP,    KC_TASK,  KC_FILE,  RGB_VAD,            RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_PAUS,  KC_VOLD,  KC_VOLU,  _______,  _______,
@@ -180,8 +183,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_MUTE,  KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,               KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,  KC_EQL,   KC_BSPC,  KC_HOME,
         KC_PAUS,  KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,               KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,  KC_RBRC,  KC_BSLS,  KC_PGUP,
         KC_CALC,  KC_CAPS,  HOME_A,   HOME_S,   HOME_D,   HOME_F,   KC_G,               KC_H,     HOME_J,   HOME_K,   HOME_L,   HOME_SCLN,KC_QUOT,            KC_ENT,   KC_PGDN,
-        KC_CUT ,  KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_BSPC,  KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_RSFT,            KC_UP,
-        KC_COPY,  KC_LCTL,  KC_LWIN,  KC_LALT,  KC_SPC,             MO(_FN3),                     KC_RALT,            KC_RALT,  KC_RCTL,            KC_LEFT,  KC_DOWN,  KC_RGHT),
+        KC_PASTE ,  KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_BSPC,  KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_RSFT,            KC_UP,
+        KC_COPY, KC_LCTL,  KC_LWIN,  KC_LALT,  KC_SPC,             MO(_FN3),                     KC_RALT,            KC_RALT,  KC_RCTL,            KC_LEFT,  KC_DOWN,  KC_RGHT),
 
     [_FN3] = LAYOUT_ansi_90(
         BL_TOGG,  _______,  BL_DOWN,  BL_UP,    KC_TASK,  KC_FILE,  RGB_VAD,            RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,  KC_VOLU,  _______,  _______,

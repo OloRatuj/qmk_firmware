@@ -5,7 +5,7 @@ RAW_ENABLE = yes
 DYNAMIC_KEYMAP_ENABLE = yes
 DYNAMIC_MACRO_ENABLE = yes
 
-MOUSEKEY_ENABLE = yes
+MOUSEKEY_ENABLE = no
 
 NO_USB_STARTUP_CHECK = yes   // maybe this help with keyboard not responding
 

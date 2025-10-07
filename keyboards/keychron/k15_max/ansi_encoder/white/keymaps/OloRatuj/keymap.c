@@ -155,7 +155,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         MY_COPY,  KC_LCTL,  KC_LWIN,  KC_LALT,  KC_SPC,             MO_LO,                        OSL_HI,             MO(_FN2), KC_RCTL,            KC_LEFT,  KC_DOWN,  KC_RGHT),
 
     [_FN2] = LAYOUT_ansi_90(
-        BL_TOGG,  _______,  BL_DOWN,  BL_UP,    KC_TASK,  KC_FILE,  RGB_VAD,            RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_PAUS,  KC_VOLD,  KC_VOLU,  _______,  _______,
+        BL_TOGG,  _______,  BL_DOWN,  BL_UP,    KC_TASK,  KC_FILE,  KC_SLEP,            KC_SLEP,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_PAUS,  KC_VOLD,  KC_VOLU,  _______,  _______,
         _______,  _______,  BT_HST1,  BT_HST2,  BT_HST3,  P2P4G,    _______,            _______,  _______,  DF_BAS1,  DF_BAS2,  DF_BAS3,  DT_DOWN,  DT_UP,    DT_PRNT,  KC_END,
         _______,  BL_TOGG,  BL_STEP,  BL_UP,    _______,  _______,  _______,            _______,  _______,  KC_UP,    _______,  _______,  _______,  _______,  _______,  _______,
         _______,  _______,  _______,  BL_DOWN,  DB_TOGG,  _______,  _______,            _______,  KC_LEFT,  KC_DOWN,  KC_RGHT,  MS_UP,    _______,            MS_BTN1,  MS_BTN2,
@@ -165,8 +165,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_LOWER] = LAYOUT_ansi_90(
         _______,  _______,  _______,  _______,  _______,  _______,  _______,            _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
         _______,  _______,  _______,  _______,  _______,  _______,  _______,            _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
-        _______,  KC_TILD,  KC_EXLM,  KC_AT,    KC_HASH,  KC_DLR,   KC_PERC,            KC_CIRC,  KC_AMPR,  KC_ASTR,  KC_LPRN,  KC_RPRN,  KC_UNDS,  KC_PLUS,  _______,  _______,
-        _______,  KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,               KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,            KC_EQL,   _______,
+        _______,  KC_TILD,  KC_EXLM,  KC_AT,    KC_HASH,  KC_DLR,   KC_PERC,            KC_CIRC,  KC_AMPR,  KC_UP  ,  KC_LPRN,  KC_RPRN,  KC_UNDS,  KC_PLUS,  _______,  _______,
+        _______,  _______,  _______,  _______,  _______,  _______,  _______,            _______,  KC_LEFT,  KC_DOWN,  KC_RGHT,  _______,  _______,            _______,  _______,
         _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,            _______,
         _______,  _______,  _______,  _______,  _______,            _______,                      KC_BSPC,            _______,  _______,            _______,  _______,  _______),
 
